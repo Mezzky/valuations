@@ -29,6 +29,10 @@ header{
 	z-index: 100;
 }
 
+header .logo img{
+	animation: fade 1s linear forwards;
+}
+
 header nav ul li a{
 	color: #fff;
 	font-weight: 500;
@@ -51,7 +55,13 @@ header nav ul li a{
 }
 
 .navbar.slide{
-	transform: translate(0);
+	visibility: visible;
+	opacity: 1;
+}
+
+.navbar ul.slide{
+	visibility: visible;
+	opacity: 1;
 }
 
 /* Main-Page */
@@ -76,7 +86,6 @@ header nav ul li a{
 	z-index: 1;
 	bottom: 0;
 	width: 100%;
-	/* height: 30vh; */
 	background-color: rgba(0, 0, 0, 0.5);
 	filter: blur(10px);
 	box-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.267);
@@ -87,8 +96,19 @@ header nav ul li a{
 	z-index: 10;
 	bottom: 0;
 	width: 100%;
-	/* height: 40vh; */
-	/* background-color: red; */
+}
+
+.typed {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: typing;
+	animation-duration: 5s;
+	animation-timing-function: steps(200, end);
+	animation-fill-mode: forwards;
+}
+
+.fade{
+	animation: fade 2s linear forwards;
 }
 
 
@@ -98,6 +118,26 @@ header nav ul li a{
 		transform: scale(1);
 	}
 	100%{
-		transform: scale(1.1);
+		transform: scale(1.2);
+	}
+}
+
+@keyframes typing {
+	from{ 
+		width: 0;
+	}
+	to{ 
+		width: 100%;
+	}
+}
+
+@keyframes fade {
+	from{
+		visibility: hidden;
+		opacity: 0;
+	}
+	to{
+		visibility: visible;
+		opacity: 1;
 	}
 }

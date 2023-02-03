@@ -9,15 +9,32 @@
     <link rel="stylesheet" href="style.css">
     <!-- TAILWINDCSS LINK -->
     <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- TailwindCSS Configuration -->
+    <script type="text/javascript">
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '320px',
+                    'md': '375px',
+                    'lg': '425px',
+                    'tablet': '768px',
+                    'laptop': '1024px',
+                    'desktop': '1280px',
+                },
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="flex w-full black justify-between items-start">
         <div class="logo z-10">
-            <img class="w-20 m-5" src="img/final-logo.svg">
+            <img class="w-28 tablet:w-36 m-5 laptop:w-40" src="img/final-logo.svg">
         </div>
-            <nav class="navbar absolute w-full h-screen bg-zinc-900/90 left-0 flex items-center justify-center translate-x-full duration-500">
-                <ul class="flex flex-col gap-2 ">
+            <nav class="navbar absolute w-full h-screen bg-black/90 left-0 flex items-center justify-center invisible opacity-0 duration-500">
+                <ul class="flex flex-col gap-2 invisible opacity-0 duration-[3s] delay-100">
                     <li><a href="#home">Appraisal</a></li>
                     <li><a href="#jasa">About</a></li>
                     <li><a href="#team">Contact</a></li>
@@ -26,7 +43,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, illum.</p>
                 </div> -->
             </nav>
-        <div class="icon-container z-10 mr-5 mt-5 flex items-center gap-2">
+        <div class="icon-container z-10 mr-8 mt-10 flex items-center gap-2">
             <div class="rectangle w-[35px] h-[16px] border-white border-[2px]"></div>
             <div class="menu-toggle relative flex items-center h-[30px] w-[30px]">
                 <button id="hamburger" class="absolute flex flex-col items-end gap-[4px]">
@@ -41,16 +58,16 @@
     <!-- Main Page -->
     <section class="main-page">
         <div class="background"></div>
-        <div class="overlay h-[200px]"></div>
-        <div class="content flex flex-col gap-1 p-8">
+        <div class="overlay h-[200px] laptop:h-[250px]"></div>
+        <div class="content flex flex-col gap-1 p-8 tablet:p-0 tablet:pb-14 tablet:pl-10 laptop:gap-4">
             <div class="sub-head flex gap-4 items-center">
-                <p class="text-white text-sm font-bold hidden">SUN VALUATION</p>
-                <div class="line h-8 w-[1px] bg-gray-300 hidden"></div>
-                <p class="text-gray-300 text-[12px] font-semibold">LOS ANGELES AND ORANGE COUNTY, CA</p>
+                <p class="fade text-white text-sm font-bold hidden tablet:block laptop:text-base">SUN VALUATION</p>
+                <div class="fade line h-8 w-[1px] bg-gray-300 tablet:block hidden"></div>
+                <p class="fade text-gray-300 text-[12px] font-semibold laptop:text-base">LOS ANGELES AND ORANGE COUNTY, CA</p>
             </div>
-            <h1 class="text-2xl font-medium text-white -ml-1">REAL ESTATE APPRAISAL SERVICE</h1>
-            <P class="laptop:w-[350px] text-gray-300 font-normal text-sm">Sun Valuation is a real estate appraisal firm based in Los Angeles, CA</P>
-        </div>
+            <h1 class="fade text-2xl font-medium text-white -ml-1 laptop:text-5xl">REAL ESTATE APPRAISAL SERVICE</h1>
+            <P class="typed tablet:w-[350px] text-gray-300 font-normal text-sm laptop:text-base">Sun Valuation is a real estate appraisal <br class="md:hidden"> firm <br class="sm:hidden md:block"> based in Los Angeles, CA</P>
+        </div> 
     </section>
 
     <script src="script.js"></script>
