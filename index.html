@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Valuation</title>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style.css">
+    <!-- TAILWINDCSS LINK -->
+    <script src="https://cdn.tailwindcss.com"></script> 
+</head>
+<body>
+    <!-- Header -->
+    <header class="flex w-full black justify-between items-start">
+        <div class="logo z-10">
+            <img class="w-20 m-5" src="img/final-logo.svg">
+        </div>
+            <nav class="navbar absolute w-full h-screen bg-zinc-900/90 left-0 flex items-center justify-center translate-x-full duration-500">
+                <ul class="flex flex-col gap-2 ">
+                    <li><a href="#home">Appraisal</a></li>
+                    <li><a href="#jasa">About</a></li>
+                    <li><a href="#team">Contact</a></li>
+                </ul>
+                <!-- <div class="box ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, illum.</p>
+                </div> -->
+            </nav>
+        <div class="icon-container z-10 mr-5 mt-5 flex items-center gap-2">
+            <div class="rectangle w-[35px] h-[16px] border-white border-[2px]"></div>
+            <div class="menu-toggle relative flex items-center h-[30px] w-[30px]">
+                <button id="hamburger" class="absolute flex flex-col items-end gap-[4px]">
+                    <span class="bg-white h-[2px] w-[35px] block transition ease-in-out duration-300 origin-top-right"></span>
+                    <span class="bg-white h-[2px] w-[35px] block transition ease-in-out duration-300"></span>
+                    <span class="bg-white h-[2px] w-[35px] block transition ease-in-out duration-300 origin-bottom-right"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Page -->
+    <section class="main-page">
+        <div class="background"></div>
+        <div class="overlay h-[200px]"></div>
+        <div class="content flex flex-col gap-1 p-8">
+            <div class="sub-head flex gap-4 items-center">
+                <p class="text-white text-sm font-bold hidden">SUN VALUATION</p>
+                <div class="line h-8 w-[1px] bg-gray-300 hidden"></div>
+                <p class="text-gray-300 text-[12px] font-semibold">LOS ANGELES AND ORANGE COUNTY, CA</p>
+            </div>
+            <h1 class="text-2xl font-medium text-white -ml-1">REAL ESTATE APPRAISAL SERVICE</h1>
+            <P class="laptop:w-[350px] text-gray-300 font-normal text-sm">Sun Valuation is a real estate appraisal firm based in Los Angeles, CA</P>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

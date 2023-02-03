@@ -1,0 +1,103 @@
+/* CSS Reset */
+/* @font-face {
+    font-family: 'Graphik';
+    src: url(font/GraphikLight.otf);
+} */
+
+@font-face {
+	font-family: 'Work Sans';
+	src: url(font/WorkSans-Light.ttf);
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+	/* overflow-x: hidden; */
+	/* height: 2000px; */
+}
+
+
+/* MAIN STYLE */
+
+/* Header */
+header{
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+}
+
+header nav ul li a{
+	color: #fff;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+/* Hamburger & Toggle */
+.hamburger-active > span:nth-child(1){
+	transform: rotate(-30deg);
+	width: 25px;
+}
+
+.hamburger-active > span:nth-child(2){
+	transform: scale(0);
+}
+
+.hamburger-active > span:nth-child(3){
+	transform: rotate(30deg);
+	width: 25px;
+}
+
+.navbar.slide{
+	transform: translate(0);
+}
+
+/* Main-Page */
+.main-page{
+	position: relative;
+    width: 100%;
+    height: 100vh;
+	overflow: hidden;
+}
+.main-page .background{
+	background: url(img/main-page-bg.jpg)
+				no-repeat
+				center;
+    background-size: cover;
+	width: 100%;
+    height: 100vh;
+	animation: zoom 10s linear forwards;
+}
+
+.main-page .overlay{
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	width: 100%;
+	/* height: 30vh; */
+	background-color: rgba(0, 0, 0, 0.5);
+	filter: blur(10px);
+	box-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.267);
+}
+
+.main-page .content{
+	position: absolute;
+	z-index: 10;
+	bottom: 0;
+	width: 100%;
+	/* height: 40vh; */
+	/* background-color: red; */
+}
+
+
+/* ANIMATION */
+@keyframes zoom {
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(1.1);
+	}
+}
