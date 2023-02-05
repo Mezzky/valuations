@@ -34,7 +34,7 @@ body{
 header{
 	width: 100%;
 	position: fixed;
-	z-index: 100;
+	z-index: 95;
 }
 
 header .icon-container{
@@ -119,7 +119,7 @@ header nav .box ul li a:hover{
 /* Main-Page */
 .load-img{
 	position: fixed;
-	z-index: 95;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -127,6 +127,7 @@ header nav .box ul li a:hover{
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	animation: disappear 100ms ease 7s forwards;
 	height: 100vh;
 }
 
@@ -181,7 +182,7 @@ header nav .box ul li a:hover{
 
 .main-page .content{
 	position: absolute;
-	z-index: 99;
+	z-index: 5;
 	bottom: 0;
 	width: 100%;
 }
@@ -233,7 +234,7 @@ header nav .box ul li a:hover{
 
 .loader{
 	position: fixed;
-	z-index: 95;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -241,6 +242,7 @@ header nav .box ul li a:hover{
 	align-items: center;
 	width: 100%;
 	height: 100vh;
+	animation: disappear 100ms ease 7s forwards;
 }
 
 .loader img{
@@ -282,6 +284,16 @@ header nav .box ul li a:hover{
 	to{
 		visibility: visible;
 		opacity: 1;
+	}
+}
+
+@keyframes disappear {
+	from{
+		/* display: flex; */
+		width: 100%;
+	}
+	to{
+		width: 0%;
 	}
 }
 
@@ -332,10 +344,14 @@ header nav .box ul li a:hover{
 }
 
 /* RESPONSIVE */
-@media screen and (max-width: 475px){
+@media screen and (max-width: 480px){
 	.contact{
 		grid-template-columns: 1fr;
 		padding: 40px 20px;
+	}
+
+	.contact .empty{
+		display: none;
 	}
 
 	.contact a{
