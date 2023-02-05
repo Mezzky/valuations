@@ -9,6 +9,17 @@ const line = document.getElementById("line");
 const textApr = document.getElementById("textApraisal");
 const textAbo = document.getElementById("textAbout");
 const back = document.querySelectorAll("#back");
+const logo = document.querySelector('header .logo');
+
+
+// Scrolled Animation
+window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+        logo.classList.add('scrolled');
+    } else{
+        logo.classList.remove('scrolled');
+    }
+});
 
 // Hamburger
 hamburger.addEventListener('click', () => {

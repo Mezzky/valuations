@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sun Valuation</title>
+    <!-- Link Image -->
+    <link rel="preload" href="img/contact-page-bg.jpg" as="image">
     <!-- CSS LINK -->
     <link rel="stylesheet" href="style.css">
     <!-- TAILWINDCSS LINK -->
@@ -30,7 +32,7 @@
 <body>
     <!-- Header -->
     <header class="flex w-full black justify-between items-start">
-        <div class="logo z-10">
+        <div class="logo visible z-10 opacity-100">
             <a href="index.html">
                 <img class="w-28 tablet:w-36 m-5 laptop:w-40" src="img/final-logo.svg">
             </a>
@@ -54,8 +56,9 @@
                     </div>
                 </div>
             </nav>
+        <div class="empty"></div>
         <div class="icon-container z-10 mr-8 mt-10 flex items-center gap-2">
-            <a href="contact.html" class="rectangle w-[40px] h-[16px] border-white border-[2px]"></a>
+            <a href="#contact" class="rectangle w-[40px] h-[16px] border-white border-[2px]"></a>
             <div class="menu-toggle relative flex items-center h-[30px] w-[30px]">
                 <button id="hamburger" class="absolute flex flex-col items-end gap-[4px]">
                     <span class="bg-white h-[2px] w-[35px] block transition ease-in-out duration-300 origin-top-right"></span>
@@ -67,13 +70,13 @@
     </header>
 
     <!-- Screen Img Load -->
-    <div class="load-img">
+    <!-- <div class="load-img">
         <div class="rectangle one"></div>
         <div class="rectangle two"></div>
-    </div>
+    </div> -->
 
     <!-- Main Page -->
-    <section class="main-page">
+    <section id="main" class="main-page">
         <div class="background-contact"></div>
         <div class="overlay h-[200px] laptop:h-[250px]"></div>
         <div class="content flex flex-col gap-1 p-8 tablet:p-0 tablet:pb-14 tablet:pl-10 laptop:gap-4">
@@ -86,13 +89,29 @@
         </div> 
     </section>
 
-    <!-- <section class="contact">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum repellendus quia fuga nostrum vitae assumenda dolore facere dolores consequuntur iste omnis odio veritatis provident natus exercitationem, ea quo est reiciendis consectetur eaque a, sed deserunt! Aut ut facere labore similique. Velit voluptates reiciendis sit corporis porro architecto eius error placeat iusto tempore, molestias deserunt minus molestiae quia. Est esse deserunt odit? Repudiandae, quaerat hic! Perferendis, laboriosam inventore? Numquam quia inventore temporibus! Qui asperiores quo fugiat? Ipsum ad, repudiandae quam rem animi aperiam cum consequatur id suscipit molestias. Modi, reiciendis fugiat iure praesentium incidunt tempora eaque deserunt earum nulla animi soluta?</p>
-    </section> -->
+    <section id="contact" class="contact grid grid-cols-2 py-16 px-10 relative">
+        <div class="empty"></div>
+        <div class="contact-form flex flex-col gap-6">
+            <h1 class="text-3xl text-gray-500">Get in Touch</h1>
+            <form class="flex flex-col gap-3 max-w-xl" action="">
+                <input class="border border-gray-400 text-md p-2 focus:outline-gray-400 focus:outline-0" type="text" placeholder="Name*" name="" id="">
+                <input class="border border-gray-400 text-md p-2 focus:outline-gray-400 focus:outline-0" type="number" placeholder="Phone Number*" name="" id="">
+                <input class="border border-gray-400 text-md p-2 focus:outline-gray-400 focus:outline-0" type="email" placeholder="Email Address*" name="" id="">
+                <input class="border border-gray-400 text-md p-2 focus:outline-gray-400 focus:outline-0" type="text" placeholder="Property Address*" name="" id="">
+                <textarea class="resize-none border border-gray-400 text-md p-2 focus:outline-gray-400 focus:outline-0" placeholder="Message*" name="" id="" cols="10" rows="5"></textarea>
+                <div class="privacy">
+                    <input type="checkbox" name="" id="policy">
+                    <label for="policy">I Understand that my data will be stored in accordance with the privacy policy</label>
+                </div>
+                <button class="border font-semibold text-sm border-gray-400 py-3 px-16 w-max duration-500 hover:bg-gray-900 hover:text-white" type="submit">SUBMIT</button>
+            </form>
+        </div>
+        <a class="py-2 px-3 text-xl font-normal bg-black text-white absolute bottom-3 left-3" href="#main">&#8593</a>
+    </section>
 
-    <div class="loader">
+    <!-- <div class="loader">
         <img src="img/final-logo.svg">
-    </div>
+    </div> -->
 
     <script src="script.js"></script>
 </body>
