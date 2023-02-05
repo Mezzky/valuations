@@ -45,18 +45,12 @@ header .icon-container{
 header .logo{
 	opacity: 0;
 	animation: fade 1s linear forwards;
-	transition: 1s ease-in;
 }
-/* 
-header .logo{
-	display: flex;
-} */
 
 header .logo.scrolled{
 	opacity: 0;
 	display: none;
 	transition: 1s ease-out;
-	/* visibility: hidden; */
 }
 
 header nav .box ul li a{
@@ -247,7 +241,6 @@ header nav .box ul li a:hover{
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	/* background-color: #161616; */
 }
 
 .loader img{
@@ -339,11 +332,7 @@ header nav .box ul li a:hover{
 }
 
 /* RESPONSIVE */
-@media screen and (max-width: 425px) {
-	#box{
-		transform: translateX(-80px);
-	}
-
+@media screen and (max-width: 475px){
 	.contact{
 		grid-template-columns: 1fr;
 		padding: 40px 20px;
@@ -353,6 +342,12 @@ header nav .box ul li a:hover{
 		left: auto;
 		right: 0;
 		bottom: 0;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	#box{
+		transform: translateX(-80px);
 	}
 }
 
