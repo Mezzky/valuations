@@ -158,7 +158,6 @@
 
         submit.addEventListener('submit',(e)=>{
             e.preventDefault();
-            console.log("Clicked");
 
             let ebody = `
             <b>Name: </b>${name.value}
@@ -177,11 +176,13 @@
                 SecureToken : "515c9291-47b8-41bc-93a9-93a79f029853",
                 To : 'raffiadrian@gmail.com',
                 From : "raffiadrian@gmail.com",
-                Subject : "Bang Mau Pesen Bang, Dari " + email.value,
+                Subject : "Sun Valuation Message, From " + email.value,
                 Body : ebody
             }).then(
                 message => alert("Email Sent Successfully!")
                 );
+            submit.reset();
+            return false;
         });
 
     </script>
