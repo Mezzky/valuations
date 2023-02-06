@@ -93,17 +93,17 @@
         <div class="empty"></div>
         <div class="contact-form flex flex-col gap-6">
             <h1 class="text-3xl text-gray-600">Get in Touch</h1>
-            <form class="flex flex-col gap-3 max-w-xl" action="https://formsubmit.co/b9c7e8ece866a5f0aebe555d2c1c4648" method="POST">
-                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" autocomplete="off" placeholder="Name*" name="Name" id="Name">
-                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="number" autocomplete="off" placeholder="Phone Number*" name="Number" id="Number">
-                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="email" autocomplete="off" placeholder="Email Address*" name="Email" id="Email">
-                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" autocomplete="off" placeholder="Property Address*" name="Address" id="Address">
-                <textarea class="resize-none border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" autocomplete="off" placeholder="Message*" name="Message" id="Message" cols="10" rows="5"></textarea>
+            <form class="flex flex-col gap-3 max-w-xl" method="POST">
+                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" required autocomplete="off" placeholder="Name*" name="Name" id="name">
+                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="number" required autocomplete="off" placeholder="Phone Number*" name="Number" id="number">
+                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="email" required autocomplete="off" placeholder="Email Address*" name="Email" id="email">
+                <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" required autocomplete="off" placeholder="Property Address*" name="Address" id="address">
+                <textarea class="resize-none border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" autocomplete="off" placeholder="Message*" name="Message" id="message" cols="10" rows="5"></textarea>
                 <div class="privacy">
                     <input type="checkbox" name="" id="policy">
                     <label for="policy">I Understand that my data will be stored in accordance with the privacy policy</label>
                 </div>
-                <button class="border font-semibold text-sm border-gray-400 py-3 px-16 w-max duration-500 hover:bg-gray-900 hover:text-white" type="submit">SUBMIT</button>
+                <button id="submit" class="border font-semibold text-sm border-gray-400 py-3 px-16 w-max duration-500 hover:bg-gray-900 hover:text-white" type="submit">SUBMIT</button>
             </form>
         </div>
         <a class="py-2 px-3 text-xl font-normal bg-black text-white absolute bottom-3 left-3" href="#main">&#8593</a>
@@ -112,7 +112,42 @@
     <div class="loader">
         <img src="img/final-logo.svg">
     </div>
-
+    
     <script src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        // Send Email
+        const btn = document.getElementById('submit');
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+
+            // Input Variables
+            const name = document.getElementById('name').value,
+                    number = document.getElementById('number').value,
+                    email = document.getElementById('email').value,
+                    address = document.getElementById('address').value,
+                    msg = document.getElementById('message').value;
+
+            const bodyMail = "Name: "+name+
+                            "<br/> Phone Number: "+number+
+                            "<br/> Email: "+email+
+                            "<br/> Address: "+address+
+                            "<br/> Message: "+msg;
+
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "contact@sunvalution.com",
+                Password : "kqbpsasumkeusahg",
+                To : 'contact@sunvalution.com',
+                From : email,
+                Subject : "Email From Sun Valution",
+                Body : bodyMail
+            }).then(
+                message => alert("Email Sent Successfully!")
+            );
+        });
+    </script>
+
 </body>
 </html>
