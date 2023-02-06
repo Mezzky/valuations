@@ -365,6 +365,14 @@ header nav .box ul li a:hover{
 	#box{
 		transform: translateX(-80px);
 	}
+
+	#textApraisal, #textAbout{
+		width: 350px;
+	}
+	
+	#line{
+		background-color: transparent;
+	}
 }
 
 @media screen and (max-width: 375px) {
@@ -373,9 +381,6 @@ header nav .box ul li a:hover{
 	}
 	#textApraisal p, #textAbout p{
 		font-size: 14px;
-	}
-	#line{
-		background-color: transparent;
 	}
 }
 

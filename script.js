@@ -14,7 +14,7 @@ const logo = document.querySelector('header .logo');
 
 // Scrolled Animation
 window.addEventListener('scroll', () => {
-    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         logo.classList.add('scrolled');
     } else{
         logo.classList.remove('scrolled');
