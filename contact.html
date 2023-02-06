@@ -93,7 +93,7 @@
         <div class="empty"></div>
         <div class="contact-form flex flex-col gap-6">
             <h1 class="text-3xl text-gray-600">Get in Touch</h1>
-            <form class="flex flex-col gap-3 max-w-xl" action="https://formsubmit.co/raffizahadha@gmail.com" method="POST">
+            <form class="form-submit flex flex-col gap-3 max-w-xl" method="POST">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" required autocomplete="off" placeholder="Name*" name="Name" id="name">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="number" required autocomplete="off" placeholder="Phone Number*" name="Number" id="number">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="email" required autocomplete="off" placeholder="Email Address*" name="Email" id="email">
@@ -117,12 +117,12 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script>
-        // Send Email
+        // // Send Email
         // const btn = document.getElementById('submit');
         // btn.addEventListener('click', function(e){
         //     e.preventDefault();
 
-            // Input Variables
+        //     // Input Variables
         //     const name = document.getElementById('name').value,
         //             number = document.getElementById('number').value,
         //             email = document.getElementById('email').value,
@@ -147,6 +147,43 @@
         //         message => alert("Email Sent Successfully!")
         //     );
         // });
+
+        // Test Punya Raffi
+        const name = document.getElementById('name');
+        const number = document.getElementById('number');
+        const email = document.getElementById('email');
+        const address = document.getElementById('address');
+        const msg = document.getElementById('message');
+        const submit = document.getElementsByClassName('form-submit')[0];
+
+        submit.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            console.log("Clicked");
+
+            let ebody = `
+            <b>Name: </b>${name.value}
+            <br>
+            <b>Email: </b>${email.value}
+            <br>
+            <b>Phone no: </b>${number.value}
+            <br>
+            <b>Address: </b>${address.value}
+            <br>
+            <b>Address: </b>${message.value}
+            <br>
+            `
+            
+            Email.send({
+                SecureToken : "515c9291-47b8-41bc-93a9-93a79f029853",
+                To : 'raffiadrian@gmail.com',
+                From : "raffiadrian@gmail.com",
+                Subject : "Bang Mau Pesen Bang, Dari " + email.value,
+                Body : ebody
+            }).then(
+                message => alert("Email Sent Successfully!")
+                );
+        });
+
     </script>
 
 </body>
