@@ -93,7 +93,7 @@
         <div class="empty"></div>
         <div class="contact-form flex flex-col gap-6">
             <h1 class="text-3xl text-gray-600">Get in Touch</h1>
-            <form class="flex flex-col gap-3 max-w-xl" method="POST">
+            <form class="flex flex-col gap-3 max-w-xl" action="https://formsubmit.co/raffizahadha@gmail.com" method="POST">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="text" required autocomplete="off" placeholder="Name*" name="Name" id="name">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="number" required autocomplete="off" placeholder="Phone Number*" name="Number" id="number">
                 <input class="border border-gray-600 text-md p-2 focus:outline-gray-600 focus:outline-0" type="email" required autocomplete="off" placeholder="Email Address*" name="Email" id="email">
@@ -118,35 +118,35 @@
 
     <script>
         // Send Email
-        const btn = document.getElementById('submit');
-        btn.addEventListener('click', function(e){
-            e.preventDefault();
+        // const btn = document.getElementById('submit');
+        // btn.addEventListener('click', function(e){
+        //     e.preventDefault();
 
             // Input Variables
-            const name = document.getElementById('name').value,
-                    number = document.getElementById('number').value,
-                    email = document.getElementById('email').value,
-                    address = document.getElementById('address').value,
-                    msg = document.getElementById('message').value;
+        //     const name = document.getElementById('name').value,
+        //             number = document.getElementById('number').value,
+        //             email = document.getElementById('email').value,
+        //             address = document.getElementById('address').value,
+        //             msg = document.getElementById('message').value;
 
-            const bodyMail = "Name: "+name+
-                            "<br/> Phone Number: "+number+
-                            "<br/> Email: "+email+
-                            "<br/> Address: "+address+
-                            "<br/> Message: "+msg;
+        //     const bodyMail = "Name: "+name+
+        //                     "<br/> Phone Number: "+number+
+        //                     "<br/> Email: "+email+
+        //                     "<br/> Address: "+address+
+        //                     "<br/> Message: "+msg;
 
-            Email.send({
-                Host : "smtp.gmail.com",
-                Username : "contact@sunvaluation.com",
-                Password : "kqbpsasumkeusahg",
-                To : 'contact@sunvaluation.com',
-                From : email,
-                Subject : "Email From Sun Valution Contact",
-                Body : bodyMail
-            }).then(
-                message => alert("Email Sent Successfully!")
-            );
-        });
+        //     Email.send({
+        //         Host : "smtp.gmail.com",
+        //         Username : "contact@sunvaluation.com",
+        //         Password : "kqbpsasumkeusahg",
+        //         To : 'contact@sunvaluation.com',
+        //         From : email,
+        //         Subject : "Email From Sun Valution Contact",
+        //         Body : bodyMail
+        //     }).then(
+        //         message => alert("Email Sent Successfully!")
+        //     );
+        // });
     </script>
 
 </body>
